@@ -55,6 +55,36 @@
         .section.active {
             display: block;
         }
+        .back-to-top {
+           position: fixed;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px 14px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #222;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+            background-color: #ffffff;
+        }
+
+        .back-to-top:hover {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+    
     </style>
 </head>
 <body class="font-sans">
@@ -89,7 +119,8 @@
         <div class="bg-brand-dark text-brand-light rounded-2xl shadow-2xl p-6 sm:p-8">
             <h2 class="font-heading text-5xl font-bold mb-6">Nuestro Menú</h2>
             <div class="my-8 space-y-8">
-                <img src="burokki-menu-1.png" alt="Menú Burokki Sushi - Página 1" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-2.png" alt="Menú Burokki Sushi - Página 2" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-3.png" alt="Menú Burokki Sushi - Página 3" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-4.png" alt="Menú Burokki Sushi - Página 4" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-5.png" alt="Menú Burokki Sushi - Página 5" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-6.png" alt="Menú Burokki Sushi - Página 6" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-7.png" alt="Menú Burokki Sushi - Página 7" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-8.png" alt="Menú Burokki Sushi - Página 8" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-9.png" alt="Menú Burokki Sushi - Página 9" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-10.png" alt="Menú Burokki Sushi - Página 10" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-11.png" alt="Menú Burokki Sushi - Página 11" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-12.png" alt="Menú Burokki Sushi - Página 12" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="Py-Script-New/burokki_menu-1.png" alt="Menú Burokki Sushi - Página 1" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="Py-Script-New/burokki_menu-2.png" alt="Menú Burokki Sushi - Página 2" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="Py-Script-New/burokki_menu-3.png" alt="Menú Burokki Sushi - Página 3" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="Py-Script-New/burokki_menu-4.png" alt="Menú Burokki Sushi - Página 4" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="Py-Script-New/burokki_menu-5.png" alt="Menú Burokki Sushi - Página 5" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="Py-Script-New/burokki_menu-6.png" alt="Menú Burokki Sushi - Página 6" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="Py-Script-New/burokki_menu-7.png" alt="Menú Burokki Sushi - Página 7" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="Py-Script-New/burokki_menu-8.png" alt="Menú Burokki Sushi - Página 8" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="Py-Script-New/burokki_menu-9.png" alt="Menú Burokki Sushi - Página 9" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="Py-Script-New/burokki_menu-10.png" alt="Menú Burokki Sushi - Página 10" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="Py-Script-New/burokki_menu-11.png" alt="Menú Burokki Sushi - Página 11" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-11.png" alt="Menú Burokki Sushi - Página 12" class="w-full h-auto rounded-lg shadow-lg"><div class="h-px bg-brand-gray my-8"></div><img src="burokki-menu-12.png" alt="Menú Burokki Sushi - Página 13" class="w-full h-auto rounded-lg shadow-lg">
+                <button onClick="scrollToTop()" class="back-to-top">⏫</button>
             </div>
              <footer class="mt-8 pt-6 border-t border-gray-700 text-center text-brand-gray text-sm">
                 <div class="space-y-2">
@@ -122,6 +153,37 @@
     }
     // Initially hide scrollbar on the main view
     document.body.style.overflow = 'hidden';
+</script>
+
+<script>
+    // Float button to go to the top when the page it's scrolled down
+    // Wait the DOM to get loaded first
+    document.addEventListener("DOMContentLoaded", () => {
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        backToTopButton.style.opacity = 0;
+        backToTopButton.style.pointerEvents = "none";
+
+        // Show the button when it's appropiate
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = ( scrollY / pageHeight ) *100;
+
+
+            
+            if (scrolled > 25) {
+                backToTopButton.style.opacity = 1;
+                backToTopButton.style.pointerEvents = "all";
+            } else {
+                backToTopButton.style.opacity = 0;
+                backToTopButton.style.pointerEvents = "none";
+            }
+            });
+        });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth"});
+        }
 </script>
 
 </body>
